@@ -1,9 +1,9 @@
 import * as createjs from 'createjs-module';
-import './style.scss';
 import {
     extCont
 } from './external.js';
-import {config} from './data/data';
+import {config} from './data/data.js';
+import './styles.scss';
 
 
 var stage = new createjs.Stage("myCanvas");
@@ -17,6 +17,11 @@ bg.cache(0, 0, stage.canvas.width, stage.canvas.height);
 
 
 stage.addChild(bg);
+
+
+var bitmapImg = new createjs.Bitmap("./assets/sprites/chicken.png");
+stage.addChild(bitmapImg);
+
 var circle = new createjs.Shape();
 circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
 circle.x = 10;
